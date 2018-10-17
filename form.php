@@ -1,3 +1,7 @@
+<?php
+    require_once("database.php");
+    // require_once "database.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +36,10 @@
             喝<input type="checkbox" name="hobby[]" value="喝">
             玩<input type="checkbox" name="hobby[]" value="玩">
             樂<input type="checkbox" name="hobby[]" value="樂">
+        </div>
+        <div>
+            意見
+            <textarea name="comment" cols="30" rows="10"></textarea>
         </div>
         <div>
             <input type="submit" value="送出">
