@@ -1,21 +1,19 @@
 <?php
+    require_once("database.php");
+
     $name = $_POST["name"];
     $mail = $_POST["mail"];
     $edu = $_POST["edu"];
     $gender = $_POST["gender"];
-    // $hobby = implode(",",$_POST["hobby"]);
-    $hobbys = $_POST["hobby"];
+    $hobby = implode(",",$_POST["hobby"]);
+    // $hobbys = $_POST["hobby"];
     $comment = $_POST["comment"];
-    echo "<ul>";
-    echo "<li>姓名:".$name."</li>";
-    echo "<li>信箱:".$mail."</li>";
-    echo "<li>學歷:".$edu."</li>";
-    echo "<li>性別:".$gender."</li>";
-    echo "<li>意見:".$comment."</li>";
-    // echo "<li>興趣:".$hobby."</li>";
-    foreach($hobbys as $hobby){
-        echo $hobby;
-    }
-    echo "</ul>";
+
+    $sql = "INSERT INTO `students`(name,mail,edu,gender,hobby,comment)
+            VALUES('$name','$mail','$edu','$gender','$hobby','$comment')";
+    
+    mysqli_query($conn,$sql);
+
+    header("Location:list.php");
 
 ?>
