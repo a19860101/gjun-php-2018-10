@@ -4,7 +4,9 @@
     $sql = "SELECT * FROM `students`";
     $result = mysqli_query($conn,$sql);
 
-    // $row = mysqli_fetch_assoc($result);
+    while($row = mysqli_fetch_assoc($result)){
+        $sts[] = $row; 
+    }
 
 
 ?>
@@ -25,19 +27,12 @@
 </head>
 <body>
     <a href="form.php">新增</a>
-    <table>
-    
-    <?php while($row=mysqli_fetch_assoc($result)){ ?>
-    <tr>
-        <td><?php echo $row["id"];?></td>
-        <td>
-            <a href="detail.php?id=<?php echo $row["id"];?>"><?php echo $row["name"];?></a>
-        </td>
-        <td><a href="edit.php?id=<?php echo $row["id"];?>">編輯</a></td>
-        <td><a href="delete.php?id=<?php echo $row["id"];?>">刪除</a></td>
-    </tr>    
-    
-    <?php } ?>
-    </table>
+    <div>
+        <?php 
+            foreach($sts as $st){
+                echo $st["name"];
+            }
+        ?>
+    </div>
 </body>
 </html>
