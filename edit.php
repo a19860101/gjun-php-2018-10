@@ -57,6 +57,8 @@
         <div>
             <input type="hidden" name="id" value="<?php echo $row["id"];?>">
             <input type="submit" value="編輯">
+            <input type="button" value="取消" onclick="history.back();">
+
         </div>
     </form>
 </body>

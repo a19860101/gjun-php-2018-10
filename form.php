@@ -43,6 +43,7 @@
         </div>
         <div>
             <input type="submit" value="送出">
+            <input type="button" value="取消" onclick="history.back();">
         </div>
     </form>
 </body>

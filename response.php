@@ -1,13 +1,13 @@
 <?php
     require_once("database.php");
 
-    $name = $_POST["name"];
-    $mail = $_POST["mail"];
+    $name = trim($_POST["name"]);
+    $mail = trim($_POST["mail"]);
     $edu = $_POST["edu"];
     $gender = $_POST["gender"];
     $hobby = implode(",",$_POST["hobby"]);
     // $hobbys = $_POST["hobby"];
-    $comment = $_POST["comment"];
+    $comment = nl2br($_POST["comment"]);
 
     $sql = "INSERT INTO `students`(name,mail,edu,gender,hobby,comment)
             VALUES('$name','$mail','$edu','$gender','$hobby','$comment')";

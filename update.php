@@ -1,11 +1,11 @@
 <?php
     require_once("database.php");
-    $name = $_POST["name"];
-    $mail = $_POST["mail"];
+    $name = trim($_POST["name"]);
+    $mail = trim($_POST["mail"]);
     $edu = $_POST["edu"];
     $gender = $_POST["gender"];
     $hobby = implode(",",$_POST["hobby"]);
-    $comment = $_POST["comment"];
+    $comment = nl2br($_POST["comment"]);
 
     $id = $_POST["id"];
 
