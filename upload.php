@@ -44,18 +44,19 @@
     if(isset($up)){
         switch($up){
             case 1:
-                echo "格式錯誤，請上傳圖檔";
+                header("location:file.php?error=1");
                 break;
             case 2:
-                echo "檔案超過3MB";
+                header("location:file.php?error=2");
                 break;
             case 3:
-                echo "請選擇檔案";
+                header("location:file.php?error=3");
         }
     }else{
         if(move_uploaded_file($tmpname,$target)){
             echo "上傳成功";
             mysqli_query($conn,$sql);
+            header("location:gallery-list.php");
         }
     }
 

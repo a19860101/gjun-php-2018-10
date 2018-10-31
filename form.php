@@ -9,17 +9,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
-    <form action="response.php" method="post">
+    <form action="javascript:;" method="post">
         <div>
-            姓名: <input type="text" name="name">
+            姓名: <input type="text" name="name" id="name">
         </div>
         <div>
-            EMAIL: <input type="text" name="mail">
+            EMAIL: <input type="text" name="mail" id="mail">
         </div>
         <div>
-            <select name="edu">
+            <select name="edu" id="edu">
                 <option value="國小">國小</option>
                 <option value="國中">國中</option>
                 <option value="高中職">高中職</option>
@@ -46,5 +47,18 @@
             <input type="button" value="取消" onclick="history.back();">
         </div>
     </form>
+    <script>
+        $(function(){
+            $("form").submit(function(){
+                // console.log("success");
+                let name = $("#name").val();
+                let mail = $("#mail").val();
+                let edu = $("#edu").val();
+                console.log(name);
+                console.log(mail);
+                console.log(edu);
+            })
+        })
+    </script>
 </body>
 </html>
