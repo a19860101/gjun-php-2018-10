@@ -54,13 +54,21 @@
                 let mail = $("#mail").val();
                 let edu = $("#edu").val();
                 let gender = $(".gender:checked").val();
-                let hobbyArray = [];
+                // 作法一 定義空陣列之後透過join轉成字串
+                // let hobbyArray = [];
+
+                // 作法二 定義空陣列之後透過php的implode轉成字串
+                let hobby =[];
                 $(".hobby:checked").each(function(index,item){
                     // console.log(item.value);
                     // console.log($(item).val())
-                    hobbyArray.push(item.value);
+                    // 作法一
+                    // hobbyArray.push(item.value);
+
+                    // 作法二
+                    hobby.push(item.value);
                 }) 
-                let hobby = hobbyArray.join(",");
+                // let hobby = hobbyArray.join(",");
                 let comment = $("#comment").val();
 
                 $.ajax({
