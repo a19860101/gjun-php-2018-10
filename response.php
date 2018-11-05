@@ -14,6 +14,6 @@
     
     mysqli_query($conn,$sql);
 
-    header("Location:list.php");
+    // header("Location:list.php");
 
 ?>

@@ -29,18 +29,18 @@
             </select>
         </div>
         <div>
-            男<input type="radio" name="gender" value="男">
-            女<input type="radio" name="gender" value="女">
+            男<input type="radio" name="gender" value="男" class="gender" checked>
+            女<input type="radio" name="gender" value="女" class="gender">
         </div>
         <div>
-            吃<input type="checkbox" name="hobby[]" value="吃">
-            喝<input type="checkbox" name="hobby[]" value="喝">
-            玩<input type="checkbox" name="hobby[]" value="玩">
-            樂<input type="checkbox" name="hobby[]" value="樂">
+            吃<input type="checkbox" name="hobby[]" value="吃" class="hobby">
+            喝<input type="checkbox" name="hobby[]" value="喝" class="hobby">
+            玩<input type="checkbox" name="hobby[]" value="玩" class="hobby">
+            樂<input type="checkbox" name="hobby[]" value="樂" class="hobby">
         </div>
         <div>
             意見
-            <textarea name="comment" cols="30" rows="10"></textarea>
+            <textarea name="comment" cols="30" rows="10" id="comment"></textarea>
         </div>
         <div>
             <input type="submit" value="送出">
@@ -50,13 +50,41 @@
     <script>
         $(function(){
             $("form").submit(function(){
-                // console.log("success");
                 let name = $("#name").val();
                 let mail = $("#mail").val();
                 let edu = $("#edu").val();
-                console.log(name);
-                console.log(mail);
-                console.log(edu);
+                let gender = $(".gender:checked").val();
+                let hobbyArray = [];
+                $(".hobby:checked").each(function(index,item){
+                    // console.log(item.value);
+                    // console.log($(item).val())
+                    hobbyArray.push(item.value);
+                }) 
+                let hobby = hobbyArray.join(",");
+                let comment = $("#comment").val();
+
+                $.ajax({
+                    url: "response.php",
+                    method: "post",
+                    data: {
+                        name: name,
+                        mail: mail,
+                        edu: edu,
+                        gender: gender,
+                        hobby: hobby,
+                        comment: comment
+                    },
+                    success:function(){
+                        console.log("success");
+                        location.href="list.php"
+                    },
+                    error:function(){
+                        console.log("error");
+                    }            
+                })
+
+
+
             })
         })
     </script>
