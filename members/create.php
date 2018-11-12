@@ -32,7 +32,7 @@
         </div>
         <div>
             <input type="submit" value="申請會員" name="submit">
-            <input type="button" value="取消">
+            <input type="button" value="取消" onclick="history.back()">
         </div>
     </form>
 

@@ -20,7 +20,7 @@
         </div>
         <div>
             <input type="submit" value="登入" name="submit">
-            <input type="button" value="取消">
+            <input type="button" value="取消" onclick="history.back()">
         </div>
     </form>
 </body>
