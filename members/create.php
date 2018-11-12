@@ -16,6 +16,11 @@
         <div>
             <label>帳號</label>
             <input type="text" name="user" id="user">
+
+            <?php if(isset($_GET["error"]) && $_GET["error"]==0){ ?>
+                <span style="color:red">帳號重複</span>
+            <?php } ?>
+        
         </div>
         <div>
             <label>密碼</label>
@@ -30,6 +35,7 @@
             <input type="button" value="取消">
         </div>
     </form>
+
     <script>
         $(function(){
             $("form").submit(function(){
@@ -43,10 +49,15 @@
                         pw:pw,
                         mail:mail
                     },
-                    method:"post",
-                    success:function(){
-                        console.log("success");
-                        location.href="index.php";
+                    type:"post",
+                    success:function(event){
+                        console.log(event);
+                        if(event=="帳號重複"){
+                            location.href="create.php?error=0";
+                        }
+                        if(event == "帳號可使用"){
+                            location.href="index.php";
+                        }
                     },
                     error:function(){
                         console.log("error");
