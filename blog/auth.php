@@ -12,6 +12,7 @@
         echo "登入成功";
 
         $_SESSION["USER"] = $row["user"];
+        $_SESSION["ID"] = $row["id"];
         $_SESSION["MAIL"] = $row["mail"];
         header("location:index.php");
 

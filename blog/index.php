@@ -40,6 +40,9 @@
         <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
         <div class="card-body">
           <h2 class="card-title"><?php echo $r_post["title"];?></h2>
+          <p>
+            分類: <?php echo $r_post["c_id"];?>
+          </p>
           <p class="card-text">
           <?php echo $r_post["content"];?>
           </p>
@@ -47,7 +50,7 @@
         </div>
         <div class="card-footer text-muted">
           <?php echo $r_post["create_at"]; ?>  by
-          <a href="#"><?php echo $r_post["m_id"]; ?></a>
+          <span class="text-primary"><?php echo $r_post["m_id"]; ?></span>
         </div>
       </div>
 
