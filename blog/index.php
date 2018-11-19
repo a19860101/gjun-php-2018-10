@@ -10,7 +10,7 @@
     mysqli_query($conn,$sql_create_cate);
   }
   
-  show_cate();
+  $cate = show_cate();
 
 
   $sql_post = "SELECT * FROM `posts`";
@@ -107,7 +107,7 @@
             <div class="col-lg-6">
               <ul class="list-unstyled mb-0">
                 <?php
-                  foreach($row_cate as $r_cate){
+                  foreach($cate as $r_cate){
                 ?>
                   <li>
                     <a href="#"><?php echo $r_cate["title"]; ?></a>

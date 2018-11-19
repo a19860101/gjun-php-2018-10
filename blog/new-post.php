@@ -2,6 +2,8 @@
   require_once("database.php");  
   include("include/header.php"); 
   include("include/nav.php"); 
+  include("function.php");
+  $cate = show_cate();
 ?>
 <div class="container">
     <div class="row">
@@ -16,11 +18,9 @@
             
             <label>文章分類</label>
             <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            <?php foreach($cate as $r_cate){?>
+                <option value=""><?php echo $r_cate["title"];?></option>
+            <?php } ?>
             </select>
 
             <div class="form-group">
