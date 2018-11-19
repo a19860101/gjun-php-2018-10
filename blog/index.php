@@ -11,9 +11,10 @@
   }
   
   // $cate = show_cate();
-  $cate = show_all(categories);
+  // $categories = "categories";
+  $cate = show_all("categories");
   // $posts = show_posts();
-  $posts = show_all(posts);
+  $posts = show_all("posts");
 
   
 

@@ -3,12 +3,12 @@
   include("include/header.php"); 
   include("include/nav.php"); 
   include("function.php");
-  $cate = show_cate();
+  $cate = show_all("categories");
 ?>
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-        <form>
+        <form method="post" action="create_post.php">
             <div class="form-group">
                 <label>文章標題</label>
                 <input type="text" class="form-control" id="title" placeholder="請輸入文章標題" name="title">
@@ -17,9 +17,9 @@
             <textarea class="form-control" rows="3" id="content" name="content"></textarea>
             
             <label>文章分類</label>
-            <select class="form-control">
+            <select class="form-control" name="c_id">
             <?php foreach($cate as $r_cate){?>
-                <option value=""><?php echo $r_cate["title"];?></option>
+                <option value="<?php echo $r_cate["id"];?>"><?php echo $r_cate["title"];?></option>
             <?php } ?>
             </select>
 
