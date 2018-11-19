@@ -13,6 +13,15 @@
             </div>
             <label>內文</label>
             <textarea class="form-control" rows="3" id="content" name="content"></textarea>
+            
+            <label>文章分類</label>
+            <select class="form-control">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
 
             <div class="form-group">
                 <label for="exampleInputFile">File input</label>
