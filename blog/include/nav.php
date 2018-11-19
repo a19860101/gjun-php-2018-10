@@ -17,10 +17,10 @@
                     <a class="nav-link" href="new-post.php">新增文章</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Services</a>
+                    <a class="nav-link" href="login.php">登入</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link" href="#">申請會員</a>
                 </li>
             </ul>
         </div>
