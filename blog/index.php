@@ -10,14 +10,12 @@
     mysqli_query($conn,$sql_create_cate);
   }
   
-  $cate = show_cate();
+  // $cate = show_cate();
+  $cate = show_all(categories);
+  // $posts = show_posts();
+  $posts = show_all(posts);
 
-
-  $sql_post = "SELECT * FROM `posts`";
-  $result_post = mysqli_query($conn,$sql_post);
-  while($rows_post = mysqli_fetch_assoc($result_post)){
-    $row_post[] = $rows_post;
-  }
+  
 
   
 ?>
@@ -35,7 +33,7 @@
       </h1>
 
       <!-- Blog Post -->
-      <?php foreach($row_post as $r_post){ ?>
+      <?php foreach($posts as $r_post){ ?>
         
       <div class="card mb-4">
         <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
