@@ -2,8 +2,8 @@
     require_once("database.php");
     
     $user = $_POST["user"];
-    // $pw = md5($_POST["pw"]);
-    $pw = $_POST["pw"];
+    $pw = md5($_POST["pw"]);
+    // $pw = $_POST["pw"];
     $sql = "SELECT * FROM `members` WHERE user='$user'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);

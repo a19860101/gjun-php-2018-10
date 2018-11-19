@@ -9,7 +9,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <?php if(isset($_SESSION["USER"])){?>
-                
+
                 <li class="nav-item">
                     <a class="nav-link" href="#"><?php echo $_SESSION["USER"]; ?></a>
                 </li>
@@ -35,7 +35,7 @@
                     <a class="nav-link" href="login.php">登入</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">申請會員</a>
+                    <a class="nav-link" href="signup.php">申請會員</a>
                 </li>
 
                 <?php } ?>
