@@ -2,6 +2,7 @@
   require_once("database.php");  
   include("include/header.php"); 
   include("include/nav.php"); 
+  include("function.php");
 
   if(isset($_POST["create_cate"])){
     $title = $_POST["title"];
@@ -9,12 +10,8 @@
     mysqli_query($conn,$sql_create_cate);
   }
   
-  
-  $sql_cate = "SELECT * FROM `categories`";
-  $result_cate = mysqli_query($conn,$sql_cate);
-  while($rows_cate = mysqli_fetch_assoc($result_cate)){
-    $row_cate[] = $rows_cate;
-  }
+  show_cate();
+
 
   $sql_post = "SELECT * FROM `posts`";
   $result_post = mysqli_query($conn,$sql_post);
