@@ -46,7 +46,7 @@
                 while($row_search = mysqli_fetch_assoc($result_search)){
             ?>
                 <li class="list-group-item">
-                    <?php echo $row_search["title"]; ?>
+                    <a href="post-detail.php?id=<?php echo $row_search["id"];?>"><?php echo $row_search["title"]; ?></a>
                 </li>
             <?php
                 }
