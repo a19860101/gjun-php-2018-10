@@ -16,9 +16,7 @@
   // $posts = show_posts();
   $posts = show_all("posts");
 
-  if(isset($_GET["search"])){
-    $search = $_GET["search"];
-  }
+  
 
 
   
@@ -37,7 +35,25 @@
 			</h1>
 
 			<!-- Blog Post -->
-			
+            <div>
+                <ul class="list-group">
+
+			<?php
+            if(isset($_GET["search"])){
+                $search = $_GET["search"];
+                $sql_search = "SELECT * FROM `posts` WHERE title LIKE '%$search%'";
+                $result_search = mysqli_query($conn,$sql_search);
+                while($row_search = mysqli_fetch_assoc($result_search)){
+            ?>
+                <li class="list-group-item">
+                    <?php echo $row_search["title"]; ?>
+                </li>
+            <?php
+                }
+              }
+            ?>
+                </ul>
+            </div>
 
 
 			<!-- Pagination -->
