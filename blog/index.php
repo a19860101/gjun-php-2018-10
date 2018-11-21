@@ -37,9 +37,11 @@
 			<?php foreach($posts as $r_post){ ?>
 
 			<div class="card mb-4">
+
 				<?php if($r_post["path"]!=""){ ?>
 				<img class="card-img-top" src="<?php echo $r_post["path"];?>" alt="Card image cap">
 				<?php } ?>
+
 				<div class="card-body">
 					<h2 class="card-title">
 						<?php echo $r_post["title"];?>
@@ -60,6 +62,9 @@
 						?>...
 					</p>
 					<a href="post-detail.php?id=<?php echo $r_post["id"];?>" class="btn btn-primary">繼續閱讀 &rarr;</a>
+					
+					<a href="#" class="btn btn-info">編輯</a>
+					
 				</div>
 				<div class="card-footer text-muted">
 					<?php echo $r_post["create_at"]; ?> by
