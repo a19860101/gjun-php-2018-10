@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-8">
-        <form method="post" action="create_post.php">
+        <form method="post" action="create_post.php"  enctype="multipart/form-data">
             <div class="form-group">
                 <label>文章標題</label>
                 <input type="text" class="form-control" id="title" placeholder="請輸入文章標題" name="title">
@@ -24,9 +24,9 @@
             </select>
 
             <div class="form-group">
-                <label for="exampleInputFile">File input</label>
-                <input type="file" id="exampleInputFile">
-                <p class="help-block">Example block-level help text here.</p>
+                <label>上傳圖片</label>
+                <input type="file" id="file" name="file">
+                <!-- <p class="help-block">Example block-level help text here.</p> -->
             </div>
             <input type="submit" class="btn btn-default" value="新增文章">
         </form>
