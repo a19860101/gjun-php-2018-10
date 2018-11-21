@@ -41,7 +41,7 @@
 			<?php
             if(isset($_GET["search"])){
                 $search = $_GET["search"];
-                $sql_search = "SELECT * FROM `posts` WHERE title LIKE '%$search%'";
+                $sql_search = "SELECT * FROM `posts` WHERE title LIKE '%$search%' OR content LIKE '%$search%'";
                 $result_search = mysqli_query($conn,$sql_search);
                 while($row_search = mysqli_fetch_assoc($result_search)){
             ?>
