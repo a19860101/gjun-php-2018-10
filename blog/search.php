@@ -16,7 +16,10 @@
   // $posts = show_posts();
   $posts = show_all("posts");
 
-  
+  if(isset($_GET["search"])){
+    $search = $_GET["search"];
+  }
+
 
   
 ?>
@@ -34,48 +37,7 @@
 			</h1>
 
 			<!-- Blog Post -->
-			<?php foreach($posts as $r_post){ ?>
-
-			<div class="card mb-4">
-				<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
-				<div class="card-body">
-					<h2 class="card-title">
-						<?php echo $r_post["title"];?>
-					</h2>
-					<p>
-						<?php 
-							$cid = $r_post["c_id"];
-							$sql_c = "SELECT * FROM `categories` WHERE id=".$cid;
-							$result_c = mysqli_query($conn,$sql_c);
-							$row_c = mysqli_fetch_assoc($result_c);
-						?>
-						分類: <?php echo $row_c["title"]; ?>
-					</p>
-					<p class="card-text">
-						<?php 
-							echo mb_substr($r_post["content"],0,100);
-							// mb_substr(字串,開頭,幾個字)
-						?>...
-					</p>
-					<a href="post-detail.php?id=<?php echo $r_post["id"];?>" class="btn btn-primary">繼續閱讀 &rarr;</a>
-				</div>
-				<div class="card-footer text-muted">
-					<?php echo $r_post["create_at"]; ?> by
-					<span class="text-primary">
-						<?php 
-							$mid = $r_post["m_id"];
-							$sql_m = "SELECT * FROM `members` WHERE id=".$mid;
-							$result_m = mysqli_query($conn,$sql_m);
-							$row_m = mysqli_fetch_assoc($result_m);
-							echo $row_m["user"];
-						?>
-
-
-					</span>
-				</div>
-			</div>
-
-			<?php } ?>
+			
 
 
 			<!-- Pagination -->
@@ -95,15 +57,13 @@
 
 			<!-- Search Widget -->
 			<div class="card my-4">
-				<h5 class="card-header">搜尋</h5>
+				<h5 class="card-header">Search</h5>
 				<div class="card-body">
 					<div class="input-group">
-						<form action="search.php" method="get">
-							<input type="text" class="form-control" placeholder="搜尋文章" name="search">
-							<span class="input-group-btn">
-								<input type="submit" class="btn btn-secondary" value="搜尋">
-							</span>
-						</form>
+						<input type="text" class="form-control" placeholder="Search for...">
+						<span class="input-group-btn">
+							<button class="btn btn-secondary" type="button">Go!</button>
+						</span>
 					</div>
 				</div>
 			</div>
