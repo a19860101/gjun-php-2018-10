@@ -2,7 +2,7 @@
     function show_all($table){
         global $conn;
 
-        $sql = "SELECT * FROM $table ";
+        $sql = "SELECT * FROM $table ORDER BY id DESC";
         $result = mysqli_query($conn,$sql);
         $row = array();
         while($rows = mysqli_fetch_assoc($result)){

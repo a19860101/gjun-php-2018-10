@@ -37,7 +37,9 @@
 			<?php foreach($posts as $r_post){ ?>
 
 			<div class="card mb-4">
-				<img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+				<?php if($r_post["path"]!=""){ ?>
+				<img class="card-img-top" src="<?php echo $r_post["path"];?>" alt="Card image cap">
+				<?php } ?>
 				<div class="card-body">
 					<h2 class="card-title">
 						<?php echo $r_post["title"];?>

@@ -12,7 +12,11 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card mb-4">
-                <img class="card-img-top" src="http://placehold.it/750x300" alt="Card image cap">
+
+            <?php if($row["path"]!=""){ ?>
+				<img class="card-img-top" src="<?php echo $row["path"];?>" alt="Card image cap">
+			<?php } ?>
+
             <div class="card-body">
                 <h2 class="card-title"><?php echo $row["title"];?></h2>
             <p>
