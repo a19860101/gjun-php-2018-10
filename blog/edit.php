@@ -28,11 +28,15 @@
             <?php } ?>
             </select>
 
+
+            <?php if($row["path"]==""){ ?>
             <div class="form-group">
                 <label>上傳圖片</label>
                 <input type="file" id="file" name="file">
-                <!-- <p class="help-block">Example block-level help text here.</p> -->
             </div>
+            <?php }else{ ?>
+            <br><div><img src="images/<?php echo $row["path"];?>" alt="" width="200"></div><br>
+            <?php } ?>
             <input type="hidden" value="<?php echo $row["id"];?>" name="id">
             <input type="submit" class="btn btn-default" value="編輯文章">
         </form>

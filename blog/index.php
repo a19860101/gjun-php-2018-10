@@ -39,7 +39,7 @@
 			<div class="card mb-4">
 
 				<?php if($r_post["path"]!=""){ ?>
-				<img class="card-img-top" src="<?php echo $r_post["path"];?>" alt="Card image cap">
+				<img class="card-img-top" src="images/<?php echo $r_post["path"];?>" alt="Card image cap">
 				<?php } ?>
 
 				<div class="card-body">

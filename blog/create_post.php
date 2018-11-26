@@ -21,13 +21,16 @@
     $filename_dir = pathinfo($filename,PATHINFO_DIRNAME);
 
 
-    $sql = "INSERT INTO `posts`(title,content,c_id,m_id,create_at,update_at,path)VALUES('$title','$content','$c_id','$m_id',NOW(),NOW(),'$target')";
+    $sql = "INSERT INTO `posts`(title,content,c_id,m_id,create_at,update_at,path)VALUES('$title','$content','$c_id','$m_id',NOW(),NOW(),'$filename')";
     // mysqli_query($conn,$sql);
     // header("location:index.php");
+        if(move_uploaded_file($tmpname,$target)){
+            echo "上傳成功";
+            mysqli_query($conn,$sql);
+            header("location:index.php");
+        }else{
+            mysqli_query($conn,$sql);
+            header("location:index.php");
+        }
 
-    if(move_uploaded_file($tmpname,$target)){
-        echo "上傳成功";
-        mysqli_query($conn,$sql);
-        header("location:index.php");
-    }
     
