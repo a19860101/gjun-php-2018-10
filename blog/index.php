@@ -62,9 +62,11 @@
 						?>...
 					</p>
 					<a href="post-detail.php?id=<?php echo $r_post["id"];?>" class="btn btn-primary">繼續閱讀 &rarr;</a>
-					
-					<a href="#" class="btn btn-info">編輯</a>
-					
+					<?php
+						if(isset($_SESSION["ID"]) && $_SESSION["ID"] == $r_post["m_id"]){
+					?>
+					<a href="edit.php?id=<?php echo $r_post["id"];?>" class="btn btn-info">編輯</a>
+					<?php } ?>
 				</div>
 				<div class="card-footer text-muted">
 					<?php echo $r_post["create_at"]; ?> by
