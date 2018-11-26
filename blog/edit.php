@@ -24,7 +24,7 @@
             <label>文章分類</label>
             <select class="form-control" name="c_id">
             <?php foreach($cate as $r_cate){?>
-                <option value="<?php echo $r_cate["id"];?>"><?php echo $r_cate["title"];?></option>
+                <option value="<?php echo $r_cate["id"];?>"<?php if($row["c_id"]==$r_cate["id"]){echo "selected";}?>><?php echo $r_cate["title"];?></option>
             <?php } ?>
             </select>
 
