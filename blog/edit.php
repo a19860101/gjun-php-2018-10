@@ -41,7 +41,8 @@
             <br>
             <?php } ?>
             <input type="hidden" value="<?php echo $row["id"];?>" name="id">
-            <input type="submit" class="btn btn-default" value="編輯文章">
+            <input type="submit" class="btn btn-primary" value="編輯文章">
+            <input type="button" class="btn btn-danger" value="取消" onclick="history.back()">
         </form>
         </div>
     </div>

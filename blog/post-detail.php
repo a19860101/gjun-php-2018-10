@@ -14,7 +14,7 @@
             <div class="card mb-4">
 
             <?php if($row["path"]!=""){ ?>
-				<img class="card-img-top" src="<?php echo $row["path"];?>" alt="Card image cap">
+				<img class="card-img-top" src="images/<?php echo $row["path"];?>" alt="Card image cap">
 			<?php } ?>
 
             <div class="card-body">
@@ -44,7 +44,9 @@
 			?>
             </span>
             </div>
+            
         </div>
+        <a href="#" class="btn btn-info" onclick="history.back()">回上頁</a>
         </div>
     </div>
 </div>
