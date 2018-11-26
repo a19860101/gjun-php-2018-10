@@ -5,8 +5,8 @@
     $content = $_POST["content"];
     $cid = $_POST["c_id"];
 
-    if(isset($_POST["path"]) && $_POST["path"]!=""){
-        
+    if(isset($_FILES["file"]["name"]) && $_FILES["file"]["name"]!=""){
+        echo "有圖片";
         $filename = $_FILES["file"]["name"];
         $size = $_FILES["file"]["size"];
         $tmpname = $_FILES["file"]["tmp_name"];
