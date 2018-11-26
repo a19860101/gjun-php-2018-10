@@ -35,7 +35,10 @@
                 <input type="file" id="file" name="file">
             </div>
             <?php }else{ ?>
-            <br><div><img src="images/<?php echo $row["path"];?>" alt="" width="200"></div><br>
+            <br>
+            <div><img src="images/<?php echo $row["path"];?>" alt="" width="200"></div>
+            <a href="delete-photo.php?id=<?php echo $row["id"];?>&path=<?php echo $row["path"];?>">刪除</a>
+            <br>
             <?php } ?>
             <input type="hidden" value="<?php echo $row["id"];?>" name="id">
             <input type="submit" class="btn btn-default" value="編輯文章">
