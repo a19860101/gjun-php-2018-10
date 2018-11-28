@@ -10,6 +10,16 @@
         }
         return $row;
     }
+    function show_post($id){
+        global $conn;
+
+        $sql = "SELECT * FROM `posts` WHERE id=".$id;
+        $result = mysqli_query($conn,$sql);
+        $row = mysqli_fetch_assoc($result);
+
+        return $row;
+
+    }
     // function show_cate(){
 
     //     global $conn;

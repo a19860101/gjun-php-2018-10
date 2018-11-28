@@ -6,9 +6,11 @@
   $cate = show_all("categories");
 
   $id = $_GET["id"];
-  $sql = "SELECT * FROM `posts` WHERE id = ".$id;
-  $result = mysqli_query($conn,$sql);
-  $row = mysqli_fetch_assoc($result);
+//   $sql = "SELECT * FROM `posts` WHERE id = ".$id;
+//   $result = mysqli_query($conn,$sql);
+//   $row = mysqli_fetch_assoc($result);
+
+    $row = show_post($id);
 ?>
 <div class="container">
     <div class="row">
