@@ -4,9 +4,9 @@
         function show_all(){
             $sql = "SELECT * FROM `posts`";
             // $result = mysqli_query($conn,$sql);
-            $result = $this->query($sql);
+            $result = $this->connect()->query($sql);
             while($row = mysqli_fetch_assoc($result)){
-                echo $row["id"];
+                echo $row["title"];
             }
         }
     }
