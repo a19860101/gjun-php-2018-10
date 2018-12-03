@@ -13,7 +13,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="create_post.php" method="post">
         <input type="text" name="title" placeholder="標題">
         <textarea name="content" placeholder="內文"></textarea>
         <select name="c_id">
