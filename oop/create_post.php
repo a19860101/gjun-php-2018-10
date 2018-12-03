@@ -9,5 +9,6 @@
     $m_id = 2;
 
     $user = new Posts();
-    $user->store_post($title,$content,$c_id,$m_id);
+    $test = $user->store_post($title,$content,$c_id,$m_id);
+    // var_dump($test);
     header("Location:index.php");

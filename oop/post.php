@@ -25,6 +25,7 @@
             // $m_id = 1;
             $this->sql = "INSERT INTO `posts`(title,content,create_at,update_at,c_id,m_id)
                           VALUES('$title','$content',NOW(),NOW(),'$c_id','$m_id')";
-            $result = $this->connect()->query($this->$sql);
+            $result = $this->connect()->query($this->sql);
+            // return $result;
         }
     }
