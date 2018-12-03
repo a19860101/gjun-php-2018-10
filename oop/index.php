@@ -6,7 +6,6 @@
     $posts = $row->show_all();
 
     $cates = new Categories();
-    $cate = $cates->show_category_all();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,10 +38,15 @@
         </tr>
     <?php foreach($posts as $post){ ?>
         <tr>
-           <td><a href="detail.php?id=<?php echo $post["id"];?>"><?php echo $post["title"];?></a></td>
-            <td><?php echo $post["c_id"];?></td>
-           <td><?php echo $post["create_at"];?></td>
-           <td><?php echo $post["update_at"];?></td>
+            <td><a href="detail.php?id=<?php echo $post["id"];?>"><?php echo $post["title"];?></a></td>
+            <td>
+                <?php
+                    $cate = $cates->show_category($post["c_id"]);
+                    echo $cate["title"];
+                ?>
+            </td>
+            <td><?php echo $post["create_at"];?></td>
+            <td><?php echo $post["update_at"];?></td>
         </tr>
     <?php } ?>
     </table>
