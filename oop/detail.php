@@ -1,10 +1,18 @@
 <?php
     include("database.php");
     include("post.php");
+    include("category.php");
+    include("user.php");
     $id = $_GET["id"];
 
     $row = new Posts();
     $post = $row->show_post($id);
+
+    $cates = new Categories();
+    $cate = $cates->show_category($post["c_id"]);
+
+    $users = new Users();
+    $user = $users->show_user($post["m_id"]);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,8 +27,8 @@
     <p>
         <?php echo $post["content"];?>
     </p>
-    <div>作者:<?php echo $post["m_id"];?></div>
-    <div>分類:<?php echo $post["c_id"];?></div>
+    <div>作者:<?php echo $user["user"];?></div>
+    <div>分類:<?php echo $cate["title"];?></div>
     <div>建立時間:<?php echo $post["create_at"];?></div>
     <div>修改時間:<?php echo $post["update_at"];?></div>
     

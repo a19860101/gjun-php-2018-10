@@ -1,8 +1,8 @@
 <?php
-    class Categories extends Database {
+    class Users extends Database {
         private $sql ;
-        function show_category_all(){
-            $this->sql = "SELECT * FROM `categories`";
+        function show_user_all(){
+            $this->sql = "SELECT * FROM `members`";
             $result = $this->connect()->query($this->sql);
             $row = array();
             while($rows = $result->fetch_assoc()){
@@ -10,8 +10,8 @@
             }
             return $row;
         }
-        function show_category($id){
-            $this->sql = "SELECT * FROM `categories` WHERE id = ".$id;
+        function show_user($id){
+            $this->sql = "SELECT * FROM `members` WHERE id = ".$id;
             $result = $this->connect()->query($this->sql);
             $row = $result->fetch_assoc();
             return $row;
