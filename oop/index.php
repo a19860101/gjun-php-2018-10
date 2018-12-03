@@ -14,6 +14,7 @@
 </head>
 <body>
     <h1>MY BLOG</h1>
+    <a href="create.php">新增文章</a>
     <ul>
     <?php foreach($posts as $post){ ?>
         <li>
