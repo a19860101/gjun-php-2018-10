@@ -25,4 +25,13 @@
             $this->sql = "DELETE FROM `posts` WHERE id = ".$id;
             $result = $this->connect()->query($this->sql);
         }
+        function update_post($id,$title,$content,$c_id){
+            $this->sql = "UPDATE `posts` SET 
+            title='$title',
+            content='$content',
+            update_at=NOW(),
+            c_id='$c_id' 
+            WHERE id =".$id;
+            $result = $this->connect()->query($this->sql);
+        }
     }

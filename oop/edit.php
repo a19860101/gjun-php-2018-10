@@ -8,6 +8,14 @@
 
     $cates = new Categories();
     $cate = $cates->show_category_all();
+
+    if(isset($_POST["update"])){
+        $title = $_POST["title"];
+        $content = $_POST["content"];
+        $c_id = $_POST["c_id"];
+        $update_post = $posts->update_post($id,$title,$content,$c_id);
+        header("Location:index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +35,7 @@
             <option value="<?php echo $c["id"];?>"<?php if($post["c_id"]==$c["id"]){ echo "selected";}?> ><?php echo $c["title"];?></option>
         <?php }?>
         </select>
-        <input type="submit" value="送出">
+        <input type="submit" value="送出" name="update">
     </form>
 </body>
 </html>
