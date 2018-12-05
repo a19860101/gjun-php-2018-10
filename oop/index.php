@@ -35,6 +35,7 @@
             <th>文章分類</th>
             <th>建立時間</th>
             <th>修改時間</th>
+            <th>動作</th>
         </tr>
     <?php foreach($posts as $post){ ?>
         <tr>
@@ -47,6 +48,10 @@
             </td>
             <td><?php echo $post["create_at"];?></td>
             <td><?php echo $post["update_at"];?></td>
+            <td>
+                <a href="delete.php?id=<?php echo $post["id"];?>" onclick="return confirm('確認刪除?')">刪除</a>&nbsp;&nbsp;
+                <a href="edit.php?id=<?php echo $post["id"];?>">編輯</a>
+            </td>
         </tr>
     <?php } ?>
     </table>

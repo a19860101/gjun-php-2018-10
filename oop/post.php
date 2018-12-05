@@ -21,4 +21,8 @@
                           VALUES('$title','$content',NOW(),NOW(),'$c_id','$m_id')";
             $result = $this->connect()->query($this->sql);
         }
+        function destroy_post($id){
+            $this->sql = "DELETE FROM `posts` WHERE id = ".$id;
+            $result = $this->connect()->query($this->sql);
+        }
     }
