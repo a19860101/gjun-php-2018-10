@@ -8,6 +8,11 @@
 </head>
 <body>
     <?php
+        // $webpage = $_SERVER["PHP_SELF"];
+        // $webpage = $_SERVER["QUERY_STRING"];
+        // $webpage = $_SERVER["HTTP_HOST"];
+        $webpage = $_SERVER["REQUEST_URI"];
+        echo $webpage;
         // $score =75;
         // if($score>80){
         //     echo "good";
@@ -16,30 +21,30 @@
         // }else{
         //     echo "不及格";
         // }
-        $score =90;
-        switch($score){
-            case 10:
-                echo "10";
-                break;
-            case 20:
-                echo "20";
-                break;
-            case 30:
-                echo "30";
-                break;
-            case "HELLO";
-                echo "HELLO";
-            default:
-                echo "default";
-        }
-        switch(true){
-            case $score>80:
-                echo "80";
-                break;
-            case $score < 80 :
-                echo "小於";
-                break;
-        }
+        // $score =90;
+        // switch($score){
+        //     case 10:
+        //         echo "10";
+        //         break;
+        //     case 20:
+        //         echo "20";
+        //         break;
+        //     case 30:
+        //         echo "30";
+        //         break;
+        //     case "HELLO";
+        //         echo "HELLO";
+        //     default:
+        //         echo "default";
+        // }
+        // switch(true){
+        //     case $score>80:
+        //         echo "80";
+        //         break;
+        //     case $score < 80 :
+        //         echo "小於";
+        //         break;
+        // }
     ?>
 </body>
 </html>

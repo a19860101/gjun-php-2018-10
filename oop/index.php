@@ -2,8 +2,10 @@
     include("database.php");
     include("post.php");
     include("category.php");
-    $row = new Posts();
-    $posts = $row->show_all();
+    // $row = new Posts();
+    // $posts = $row->show_all();
+    $row = new Pages();
+    $posts = $row->post_page(2);
 
     $cates = new Categories();
 ?>
@@ -55,5 +57,8 @@
         </tr>
     <?php } ?>
     </table>
+    <?php
+        $row->pagination();
+    ?>
 </body>
 </html>
