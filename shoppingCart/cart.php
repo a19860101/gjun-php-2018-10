@@ -3,7 +3,9 @@
     require("database.php");
     require("products.php");
 
-
+    if(isset($_GET["clear"])&&$_GET["clear"]==true){
+        unset($_SESSION["CART"]);
+    }
     
 ?>
 <!DOCTYPE html>
@@ -25,7 +27,7 @@
 <body>
         <div class="container">
             <a href="index.php">繼續購物</a>
-            <a href="#">清空購物車</a>
+            <a href="cart.php?clear=true">清空購物車</a>
         </div>
     <table>
         <tr>
@@ -38,19 +40,25 @@
             // echo $_SESSION["CART"];
             // var_dump($_SESSION["CART"]);
             // print_r($_SESSION["CART"]);
-            $cart_string = $_SESSION["CART"];
-            $cart_array = explode(",",$cart_string);
-            // var_dump($cart_array);
-            foreach($cart_array as $items){
-                $products = new Products();
-                $product = $products->show($items);
-                foreach($product as $p){
-                    echo "<tr>";
-                    echo "<td>".$p["id"]."</td>";
-                    echo "<td>".$p["title"]."</td>";
-                    echo "<td>".$p["price"]."</td>";
-                    echo "</tr>";
+            if(isset($_SESSION["CART"])){
+                $cart_string = $_SESSION["CART"];
+                $cart_array = explode(",",$cart_string);
+                // var_dump($cart_array);
+                foreach($cart_array as $items){
+                    $products = new Products();
+                    $product = $products->show($items);
+                    foreach($product as $p){
+                        echo "<tr>";
+                        echo "<td>".$p["id"]."</td>";
+                        echo "<td>".$p["title"]."</td>";
+                        echo "<td>".$p["price"]."</td>";
+                        echo "</tr>";
+                    }
                 }
+            }else{
+                echo "<tr>";
+                echo "<td colspan='3'>空空空</td>";
+                echo "</tr>";
             }
         ?>
     </table>
