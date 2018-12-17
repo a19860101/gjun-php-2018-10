@@ -5,11 +5,11 @@
         $items = $_SESSION["CART"];
         $items = $items.",".$_GET["id"];
         $_SESSION["CART"] = $items;
-        echo $_SESSION["CART"];
+        // echo $_SESSION["CART"];
     }else{
         $items = $_GET["id"];
         $_SESSION["CART"] = $items;
-        echo $_SESSION["CART"];
+        // echo $_SESSION["CART"];
     }
     // session_destroy();
 

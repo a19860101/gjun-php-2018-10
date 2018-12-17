@@ -25,7 +25,7 @@
 </head>
 <body>
     <div class="container">
-        <a href="#">查看購物車</a>
+        <a href="cart.php">查看購物車</a>
     </div>
     <div class="container">
         <table>
