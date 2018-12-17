@@ -32,6 +32,7 @@
     <table>
         <tr>
             <th>編號</th>
+            <th>商品編號</th>
             <th>品名</th>
             <th>價格</th>
             <!-- <th>動作</th> -->
@@ -44,11 +45,14 @@
                 $cart_string = $_SESSION["CART"];
                 $cart_array = explode(",",$cart_string);
                 // var_dump($cart_array);
-                foreach($cart_array as $items){
+                foreach($cart_array as $key => $items){
                     $products = new Products();
                     $product = $products->show($items);
                     foreach($product as $p){
                         echo "<tr>";
+                        echo "<td>";
+                        echo $key + 1;
+                        echo "</td>";
                         echo "<td>".$p["id"]."</td>";
                         echo "<td>".$p["title"]."</td>";
                         echo "<td>".$p["price"]."</td>";
@@ -57,7 +61,7 @@
                 }
             }else{
                 echo "<tr>";
-                echo "<td colspan='3'>空空空</td>";
+                echo "<td colspan='4'>空空空</td>";
                 echo "</tr>";
             }
         ?>
