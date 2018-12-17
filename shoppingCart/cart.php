@@ -3,7 +3,7 @@
     require("database.php");
     require("products.php");
 
-    
+
     
 ?>
 <!DOCTYPE html>
@@ -15,6 +15,24 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <table>
+        <tr>
+            <th>編號</th>
+            <th>品名</th>
+            <th>價格</th>
+            <th>動作</th>
+        </tr>
+        <?php
+            // echo $_SESSION["CART"];
+            // var_dump($_SESSION["CART"]);
+            // print_r($_SESSION["CART"]);
+            $cart_string = $_SESSION["CART"];
+            $cart_array = explode(",",$cart_string);
+            // var_dump($cart_array);
+            foreach($cart_array as $items){
+                echo $items;
+            }
+        ?>
+    </table>
 </body>
 </html>
