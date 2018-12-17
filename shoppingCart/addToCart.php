@@ -4,5 +4,8 @@
         echo "購物車中有商品";
         var_dump($_SESSION["CART"]); 
     }else{
-        echo "空的購物車";
+        $items = $_GET["id"];
+        $_SESSION["CART"] = $items;
+        echo $_SESSION["CART"];
     }
+
